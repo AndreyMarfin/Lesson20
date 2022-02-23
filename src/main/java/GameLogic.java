@@ -1,11 +1,14 @@
-package pro.learnup.homework;
-
 public class GameLogic {
-    public static boolean isGreenLight = false;
-    public static int maxSpeed = 2;
 
+    public boolean isGreenLight;
+    public int maxSpeed = 2;
+    public String[] listOfPlayers;
 
-    public static String[] listOfSurvivors(String[] listOfPlayers) {
+    public GameLogic(boolean isGreenLight) {
+        this.isGreenLight = isGreenLight;
+    }
+
+    public String[] listOfSurvivors(String[] listOfPlayers) {
         int cnt = 0;
         for (String listOfPlayer : listOfPlayers) {
             String[] parts = listOfPlayer.split(" ");
@@ -44,7 +47,7 @@ public class GameLogic {
         return response;
     }
 
-    public static int numbersOfDropOuts(String[] listOfPlayers) {
+    public int numbersOfDropOuts(String[] listOfPlayers) {
         int response = 0;
         for (String listOfPlayer : listOfPlayers) {
             String[] parts = listOfPlayer.split(" ");
@@ -67,7 +70,7 @@ public class GameLogic {
         return response;
     }
 
-    public static int[] speedOfTheDroppedPlayers(String[] listOfPlayers) {
+    public int[] speedOfTheDroppedPlayers(String[] listOfPlayers) {
         int cnt = numbersOfDropOuts(listOfPlayers);
         int[] response = new int[cnt];
         int i = 0;
@@ -91,7 +94,7 @@ public class GameLogic {
         return response;
     }
 
-    public static int[] speedOfTheNonDroppedPlayers(String[] listOfPlayers) {
+    public int[] speedOfTheNonDroppedPlayers(String[] listOfPlayers) {
         int cnt = 0;
         for (String listOfPlayer : listOfPlayers) {
             String[] parts = listOfPlayer.split(" ");
